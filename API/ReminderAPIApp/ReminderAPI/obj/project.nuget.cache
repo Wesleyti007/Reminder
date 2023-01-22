@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "aE9Z7cTkLUTjqxgBSPffOUwWx6P9F400lbBzIVV4gx1HRi1s5JXvbAbxJ5tcfZ+Chu0oj/4Kq2ZDSPw4WfgSpA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Wesley\\Desktop\\Nova pasta\\Reminder\\API\\ReminderAPIApp\\ReminderAPI\\ReminderAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Wesley\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Wesley\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Wesley\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Wesley\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Wesley\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Wesley\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
