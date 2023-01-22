@@ -6,7 +6,7 @@ namespace ReminderAPI
     {
         public int Id { get; set; }
         
-        [StringLength(10)]
+        [StringLength(20)]
         public string Status { get; set; } = string.Empty;
         
         [StringLength(200)]
