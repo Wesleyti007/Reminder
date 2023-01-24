@@ -30,19 +30,19 @@ export class ReminderApiService {
 
   //ReminderType
   getReminderTypeList():Observable<any[]>{
-    return this.http.get<any>(this.reminderApiUrl + '/RemindersTypes');
+    return this.http.get<any>(this.reminderApiUrl + '/ReminderTypes');
   }
 
   addReminderType(data:any){
-    return this.http.post(this.reminderApiUrl + '/RemindersTypes', data)
+    return this.http.post(this.reminderApiUrl + '/ReminderTypes', data)
   }
 
   updateReminderType(id:number|string, data:any){
-    return this.http.put(this.reminderApiUrl + `/RemindersTypes/${id}` , data);
+    return this.http.put(this.reminderApiUrl + `/ReminderTypes/${id}` , data);
   }
 
   deleteReminderType(id:number|string){
-    return this.http.delete(this.reminderApiUrl + `/RemindersType/${id}`);
+    return this.http.delete(this.reminderApiUrl + `/ReminderType/${id}`);
   }
   
 
