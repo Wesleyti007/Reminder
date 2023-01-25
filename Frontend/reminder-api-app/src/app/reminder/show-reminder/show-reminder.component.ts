@@ -47,6 +47,39 @@ export class ShowReminderComponent implements OnInit {
     this.reminderList$ = this.service.getReminderList();
   }
 
+  modalEdit(item:any){
+    this.reminder = item;
+    this.modalTitle = "Edição de tarefa";
+    this.activateAddEditReminderComponent = true;
+  }
+  
+  delete(item:any){
+
+    if(confirm(`Deseja deletar a tarefa ${item.id} ?`)){
+    
+      this.service.deleteReminder(item.id).subscribe(res => {
+        var closeModalBtn = document.getElementById('add-edit-modal-close')
+        if (closeModalBtn) {
+          closeModalBtn.click();
+        }
+  
+        var showdeleteSuccess = document.getElementById('delete-success-alert')
+        if (showdeleteSuccess) {
+          showdeleteSuccess.style.display = "block";
+        }
+  
+        setTimeout(function () {
+          if (showdeleteSuccess) {
+            showdeleteSuccess.style.display = "none"
+          }
+        }, 4000);
+      })
+
+    }
+
+    
+  }
+
 
   refreshReminderTypeMap() {
     this.service.getReminderTypeList().subscribe(data => {

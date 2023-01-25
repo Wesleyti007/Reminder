@@ -1,6 +1,7 @@
 <form>
     <div class="mb-3">
         <label for="reminderTypeId" class="form-label">Tipo Tarefa</label>
+        <input type="text" class="form-control" name="reminderTypeId" [(ngModel)]="reminderTypeId" *ngIf="reminder.id !=0" disabled="">
         <select name="reminderTypeId" id="reminderTypeId" class="form-control" [(ngModel)]="reminderTypeId"
             *ngIf="reminder.id==0">
             <option *ngFor="let item of reminderTypeList$|async" [value]="item.id">{{item.reminderName}}</option>
