@@ -48,19 +48,19 @@ export class ReminderApiService {
 
   //Status
   getStatusList():Observable<any[]>{
-    return this.http.get<any>(this.reminderApiUrl + '/status');
+    return this.http.get<any>(this.reminderApiUrl + '/Status');
   }
 
   addStatus(data:any){
-    return this.http.post(this.reminderApiUrl + '/status', data)
+    return this.http.post(this.reminderApiUrl + '/Status', data)
   }
 
   updateStatus(id:number|string, data:any){
-    return this.http.put(this.reminderApiUrl + `/status/${id}` , data);
+    return this.http.put(this.reminderApiUrl + `/Status/${id}` , data);
   }
 
   deleteStatus(id:number|string){
-    return this.http.delete(this.reminderApiUrl + `/status/${id}`);
+    return this.http.delete(this.reminderApiUrl + `/Status/${id}`);
   }
 
 }

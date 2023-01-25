@@ -1,6 +1,22 @@
-<button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary float-end m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Show Tipos de Tarefas
 </button>
+
+  <!-- Button Add New Reminder -->
+  <button type="button" class="btn btn-primary float-end m-2" data-bs-toggle="modal" data-bs-target="#exampleModalNew" (click)="modalAdd()">
+    Nova Tarefa
+  </button>
+
+  <div class="alert alert-success" role="alert" id="add-success-alert">
+    Tarefa adicionada com sucesso
+  </div>
+  <div class="alert alert-success" role="alert" id="update-success-alert">
+    Tarefa Atualizada
+  </div>
+  <div class="alert alert-success" role="alert" id="delete-success-alert">
+    Tarefa deletada com sucesso
+  </div>
 
 <table class="table  table-striped">
     <thead>
@@ -20,8 +36,6 @@
     </tbody>
 </table>
 
-<!-- Button trigger modal -->
-
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -34,7 +48,21 @@
         <div class="modal-body">
           <p *ngFor="let tipo of reminderTypeList$|async"> {{tipo.id}} - {{tipo.reminderName}} </p>
         </div>
-        
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add New Reminder or Update -->
+  <div class="modal fade" id="exampleModalNew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{modalTitle}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modalClose()" id="add-edit-modal-close"></button>
+        </div>
+        <div class="modal-body">
+            <app-add-edit-reminder [reminder]="reminder" *ngIf="activateAddEditReminderComponent"></app-add-edit-reminder>
+        </div>
       </div>
     </div>
   </div>

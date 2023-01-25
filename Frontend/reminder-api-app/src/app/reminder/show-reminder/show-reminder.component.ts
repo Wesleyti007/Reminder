@@ -9,15 +9,15 @@ import { ReminderApiService } from 'src/app/reminder-api.service';
 })
 export class ShowReminderComponent implements OnInit {
 
-  reminderList$!:Observable<any[]>;
-  reminderTypeList$!:Observable<any[]>;
-  reminderTypeList:any=[];
+  reminderList$!: Observable<any[]>;
+  reminderTypeList$!: Observable<any[]>;
+  reminderTypeList: any = [];
 
 
   // Map para mostrar a assoiacao entre as tabelas
-  reminderTypeMap:Map<number, string> = new Map();
+  reminderTypeMap: Map<number, string> = new Map();
 
-  constructor(private service:ReminderApiService) { }
+  constructor(private service: ReminderApiService) { }
 
   ngOnInit(): void {
     this.reminderList$ = this.service.getReminderList();
@@ -25,12 +25,34 @@ export class ShowReminderComponent implements OnInit {
     this.refreshReminderTypeMap();
   }
 
+  //Variavel (propriedades)
+  modalTitle: string = '';
+  activateAddEditReminderComponent: boolean = false;
+  reminder: any;
 
-  refreshReminderTypeMap(){
+
+  modalAdd() {
+    this.reminder = {
+      id: 0,
+      status: null,
+      coments: null,
+      reminderTypeId: null
+    }
+    this.modalTitle = "Nova Tarefa";
+    this.activateAddEditReminderComponent = true;
+  }
+
+  modalClose() {
+    this.activateAddEditReminderComponent = false;
+    this.reminderList$ = this.service.getReminderList();
+  }
+
+
+  refreshReminderTypeMap() {
     this.service.getReminderTypeList().subscribe(data => {
       this.reminderTypeList = data;
 
-      for(let i = 0; i < data.length; i ++){
+      for (let i = 0; i < data.length; i++) {
         this.reminderTypeMap.set(this.reminderTypeList[i].id, this.reminderTypeList[i].reminderName)
       }
     })

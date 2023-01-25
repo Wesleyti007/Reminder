@@ -1,1 +1,21 @@
-<p>add-edit-reminder works!</p>
+<form>
+    <div class="mb-3">
+        <label for="reminderTypeId" class="form-label">Tipo Tarefa</label>
+        <select name="reminderTypeId" id="reminderTypeId" class="form-control" [(ngModel)]="reminderTypeId"
+            *ngIf="reminder.id==0">
+            <option *ngFor="let item of reminderTypeList$|async" [value]="item.id">{{item.reminderName}}</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="status" class="form-label">Status Tarefa</label>
+        <select name="status" id="status" class="form-control" [(ngModel)]="status">
+            <option *ngFor="let status of statusList$|async" [value]="status.statusName">{{status.statusName}}</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="coments" class="form-label">Comentario</label>
+        <input type="text" class="form-control" [(ngModel)]="coments" name="coments">
+    </div>
+    <button (click)="newReminder()" *ngIf="reminder.id ==0" class="btn btn-primary"> Salvar</button>
+    <button (click)="updateReminder()" *ngIf="reminder.id !=0" class="btn btn-primary"> Atualizar</button>
+</form>
